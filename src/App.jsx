@@ -6,7 +6,8 @@ function App() {
   const[found,set_found] = useState(false)
    let userId = localStorage.getItem("userId");
    const [loading, setLoading] = useState(false);
-  if (!userId) {
+   const[filter,set_filter] = useState("All")
+    if (!userId) {
     userId = Date.now().toString();
     localStorage.setItem("userId", userId);
   }
@@ -79,12 +80,29 @@ function App() {
     return err;
   }
 };
+const filter_by = ["All","Pending","Completed"]
 
+const filter_task = tasks.filter((item) => {
+  if (filter === "All") return true;
+  if (filter === "Completed") return item.complete;
+  if (filter === "Pending") return !item.complete;
+});
+console.log("all",filter_task)
   return(
      <>
         <h1>Task Manager</h1>
       <div className="main_div"> 
         <div className="task3"> 
+          <div className="filter_item">
+            {
+              filter_by.map((item)=>{
+                return <>
+                <div onClick={()=>set_filter(item)}>{item}</div>
+                </>
+              })
+            }
+          </div>
+
       <div className="input_div"> 
         <div className="input_field"><input className="input_text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter task"/></div>
        <div className="Add" onClick={handleSubmit}>{editId ? "Update" : "Add"}</div>
@@ -92,7 +110,7 @@ function App() {
      {found && <div style={{textAlign:'center',marginTop:'50px'}}>not found</div>}
      {loading && <div style={{textAlign:'center',marginTop:'50px'}}>loading</div>}
      <div className="task_list"> 
-        {tasks.length>0 && tasks.map((t) => (
+        {filter_task.length>0 ? filter_task.map((t) => (
         <div key={t.id} style={{ marginBottom: "10px" }}>
           <div className="task"> 
           <input type="checkbox"checked={t.complete}onChange={()=>toggleComplete(t)} />
@@ -103,12 +121,12 @@ function App() {
           </div>
         </div>
         </div>
-      ))}
+      )):<><div style={{textAlign:"center"}}>OOPS NOT FOUND</div></>}
       </div>
       </div>
             </div>
 
     </>
-  );
+  )
 }
 export default App;
