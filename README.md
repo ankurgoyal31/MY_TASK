@@ -1,16 +1,152 @@
-# React + Vite
+# 🚀 Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack task manager application built using **React, Node.js, Express, and MySQL**.
+This project allows users to manage their daily tasks with features like create, update, delete, filter, and mark tasks as completed.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Features
 
-## React Compiler
+* ✅ Create new tasks
+* ✏️ Edit existing tasks
+* ❌ Delete tasks
+* 🔄 Toggle task completion (complete / incomplete)
+* 👤 User-based task isolation (using localStorage userId)
+* 🔍 Filter tasks:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  * All
+  * Completed
+  * Pending
+* 🕒 Display task creation time
+* 💾 Persistent data using MySQL database
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+**Frontend**
+
+* React (Vite)
+* JavaScript
+* CSS
+
+**Backend**
+
+* Node.js
+* Express.js
+
+**Database**
+
+* MySQL
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/task-manager-app.git
+cd task-manager-app
+```
+
+---
+
+### 2️⃣ Install dependencies
+
+#### Backend:
+
+```bash
+cd server
+npm install
+```
+
+#### Frontend:
+
+```bash
+cd client
+npm install
+```
+
+---
+
+### 3️⃣ Setup environment variables
+
+Create a `.env` file in backend:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=todo_app
+```
+
+---
+
+### 4️⃣ Run the project
+
+#### Start backend:
+
+```bash
+node index.js
+```
+
+#### Start frontend:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint            | Description     |
+| ------ | ------------------- | --------------- |
+| POST   | /create_tasks       | Create new task |
+| GET    | /tasks?userId=      | Get user tasks  |
+| PATCH  | /tasks/:id/update   | Update task     |
+| PATCH  | /tasks/:id/complete | Toggle complete |
+| DELETE | /tasks/:id/delete   | Delete task     |
+
+---
+
+## 🧠 Key Concepts Used
+
+* REST API design
+* SQL queries & relationships
+* React state management
+* Conditional rendering
+* Client-side filtering
+* Error handling (try-catch + response checks)
+
+---
+
+## 📷 Screenshots (Optional)
+
+*Add screenshots here*
+
+---
+
+## 👨‍💻 Author
+
+**Ankur Goyal**
+
+---
+
+## ⭐ Conclusion
+
+This project demonstrates full-stack development skills including frontend UI, backend APIs, database integration, and real-world problem solving.
+
+---
+
+## 🔥 Future Improvements
+
+* Authentication (JWT / Clerk)
+* Better UI/UX
+* Deployment (Vercel + Render)
+* Unit testing
+* Docker setup
+
+---
