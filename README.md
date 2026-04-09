@@ -46,8 +46,8 @@ This project allows users to manage their daily tasks with features like create,
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/task-manager-app.git
-cd task-manager-app
+git clone https://github.com/ankurgoyal31/MY_TASK.git
+cd MY_TASK
 ```
 
 ---
