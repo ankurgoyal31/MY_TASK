@@ -1,0 +1,85 @@
+body{
+  background-color: rgb(6, 0, 44);
+  color: white;
+}
+.task{
+/* border: solid red 2px; */
+display: flex;
+gap: 10px;
+ justify-content: space-around;
+
+}
+.main_div{
+  /* border: solid red 2px; */
+width: 100%;
+height: 100vh;
+justify-items: center;
+align-content: center;
+color: white;
+font-weight: 400;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.task3{
+ padding: 10px;
+  background-color: rgba(53, 72, 72, 0.237);
+  width: 70%;
+  border-radius: 10px;
+}
+.task_list{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.text{
+  width: 60%;
+ }
+  
+ .input_div{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  }
+ .input_text{
+  width: 90%;
+  background-color: rgb(12, 11, 11);
+   outline: none;
+   border: none;
+  color: white;
+  transition: width 2s ease;
+   height: 20px;
+  }
+ .input_field{
+   border-radius: 30px;
+    width: 40%;
+   padding: 5px;
+   transition: width 1s ease;
+     background-color: rgb(12, 11, 11);
+ text-align: center;
+ }
+ .input_field:hover{
+   width: 60%;
+   }
+
+ .Add{
+  background: rgba(255, 0, 0, 0.18);
+  width: 10%;
+   cursor: pointer;
+   height: 20px;
+   padding: 2px;
+   text-align: center;
+   border-radius: 3px;
+  }
+
+  .btn{
+    background-color: rgba(137, 43, 226, 0.547);
+    border-radius: 10px;
+    width: 60px;
+    text-align: center;
+    cursor: pointer;
+    height: 20px;
+   }
+
+  .btn_box{
+    display: flex;
+    gap: 10px;
+   }
