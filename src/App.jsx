@@ -3,8 +3,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
   const [editId, setEditId] = useState(null);
-  const[found,set_found] = useState(false)
-   let userId = localStorage.getItem("userId");
+    let userId = localStorage.getItem("userId");
    const [loading, setLoading] = useState(false);
    const[filter,set_filter] = useState("All")
     if (!userId) {
@@ -16,9 +15,9 @@ function App() {
     setLoading(true);
     const res = await fetch(`${import.meta.env.VITE_API}/tasks?userId=${userId}`);
     const data = await res.json();
-         set_found(data.length === 0);
-        setTasks(data);
+         setTasks(data);
     } catch (err) {
+       alert("Network error ❌ Check your internet");
     console.log(err);
   }finally {
   setLoading(false);
@@ -107,7 +106,6 @@ console.log("all",filter_task)
         <div className="input_field"><input className="input_text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Enter task"/></div>
        <div className="Add" onClick={handleSubmit}>{editId ? "Update" : "Add"}</div>
       </div>
-     {found && <div style={{textAlign:'center',marginTop:'50px'}}>not found</div>}
      {loading && <div style={{textAlign:'center',marginTop:'50px'}}>loading</div>}
      <div className="task_list"> 
         {filter_task.length>0 ? filter_task.map((t) => (
@@ -119,8 +117,9 @@ console.log("all",filter_task)
           <div className="btn" onClick={() => editTask(t)}>Edit</div>
           <div className="btn" onClick={() => deleteTask(t.id)}>Delete</div>
           </div>
+                  <div style={{fontSize:'10px'}}>{new Date(t.created_at).toLocaleString()}</div>
         </div>
-        </div>
+         </div>
       )):<><div style={{textAlign:"center"}}>OOPS NOT FOUND</div></>}
       </div>
       </div>
