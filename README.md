@@ -123,7 +123,7 @@ npm run dev
 
 ---
 
-## 📷 Screenshots (Optional)
+## 📷 Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f5cd3808-49cb-4ca5-b909-969300613cee" />
 
 *Add screenshots here*
